@@ -99,12 +99,14 @@ public class UniversityAffiliate {
         Arrays.fill(validationFlags, true);
         int lastIndex = validationFlags.length - 1;
 
+        int EMAIL_FLAG = 0;
         if (!validateEmail()) {
-            validationFlags[0] = false;
+            validationFlags[EMAIL_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int USERNAME_FLAG = 1;
         if (userName == null || userName.isBlank()) {
-            validationFlags[1] = false;
+            validationFlags[USERNAME_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
 

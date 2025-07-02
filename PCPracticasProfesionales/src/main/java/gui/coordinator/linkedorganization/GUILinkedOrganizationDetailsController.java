@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import model.LinkedOrganization;
 import org.apache.logging.log4j.LogManager;
@@ -65,29 +64,34 @@ public class GUILinkedOrganizationDetailsController {
     }
 
     public void showInvalidData(boolean[] flags) {
-        if (!flags[0]) {
-            nameLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int NAME_FLAG = 0;
+        if (!flags[NAME_FLAG]) {
+            nameLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[1]) {
-            descriptionLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int DESCRIPTION_FLAG = 1;
+        if (!flags[DESCRIPTION_FLAG]) {
+            descriptionLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[2]) {
-            addressLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int ADDRESS_FLAG = 2;
+        if (!flags[ADDRESS_FLAG]) {
+            addressLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[3]) {
-            emailLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int EMAIL_FLAG = 3;
+        if (!flags[EMAIL_FLAG]) {
+            emailLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[4]) {
-            alterContactLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int ALTER_CONTACT_FLAG = 4;
+        if (!flags[ALTER_CONTACT_FLAG]) {
+            alterContactLabel.setTextFill(utils.ERROR_COLOUR);
         }
     }
 
     public void resetLabels() {
-        nameLabel.setTextFill(Paint.valueOf("#000000"));
-        descriptionLabel.setTextFill(Paint.valueOf("#000000"));
-        addressLabel.setTextFill(Paint.valueOf("#000000"));
-        emailLabel.setTextFill(Paint.valueOf("#000000"));
-        alterContactLabel.setTextFill(Paint.valueOf("#000000"));
+        nameLabel.setTextFill(utils.DEFAULT_COLOUR);
+        descriptionLabel.setTextFill(utils.DEFAULT_COLOUR);
+        addressLabel.setTextFill(utils.DEFAULT_COLOUR);
+        emailLabel.setTextFill(utils.DEFAULT_COLOUR);
+        alterContactLabel.setTextFill(utils.DEFAULT_COLOUR);
     }
 
     public void updateLinkedOrganization() {

@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import model.Evaluation;
@@ -72,13 +71,13 @@ public class GUIUploadEvaluationController {
     public boolean validateData(Evaluation evaluation) {
         boolean validationFlag = true;
         if (evaluation.getEvaluationPath().isBlank()) {
-            filePathLabel.setTextFill(Paint.valueOf("#dd0000"));
+            filePathLabel.setTextFill(utils.ERROR_COLOUR);
             utils.createAlert("Campos inválidos",
                     "Debe subir el archivo de evaluación");
             validationFlag = false;
         }
         if (evaluation.getAverageGrade() < 1 || evaluation.getAverageGrade() > 100) {
-            gradeLabel.setTextFill(Paint.valueOf("#dd0000"));
+            gradeLabel.setTextFill(utils.ERROR_COLOUR);
             utils.createAlert("Campos inválidos",
                     "La calificación debe estar en el rango [1-100]");
             validationFlag = false;
@@ -86,7 +85,13 @@ public class GUIUploadEvaluationController {
         return validationFlag;
     }
 
+    public void resetLabels() {
+        filePathLabel.setTextFill(utils.DEFAULT_COLOUR);
+        gradeLabel.setTextFill(utils.DEFAULT_COLOUR);
+    }
+
     public void uploadEvaluation() {
+        resetLabels();
         Evaluation evaluation = getTextFields();
         if (validateData(evaluation)) {
             try {

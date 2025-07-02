@@ -9,7 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import model.ProjectRequest;
@@ -31,7 +30,6 @@ public class GUIProjectRequestController {
     @FXML private TextField filePathTextField;
     @FXML private Label titleLabel;
     @FXML private Label filePathLabel;
-    @FXML private Button saveButton;
 
     public void init() {
         setFileButton();
@@ -63,19 +61,19 @@ public class GUIProjectRequestController {
     }
 
     public void showInvalidData(boolean[] flags) {
-        String redColor = "#dd0000";
-        if (!flags[0]) {
-            titleLabel.setTextFill(Paint.valueOf(redColor));
+        int TITLE_FLAG = 0;
+        if (!flags[TITLE_FLAG]) {
+            titleLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[1]) {
-            filePathLabel.setTextFill(Paint.valueOf(redColor));
+        int FILE_PATH_FLAG = 1;
+        if (!flags[FILE_PATH_FLAG]) {
+            filePathLabel.setTextFill(utils.ERROR_COLOUR);
         }
     }
 
     public void resetLabels() {
-        String blackColor = "#000000";
-        titleLabel.setTextFill(Paint.valueOf(blackColor));
-        filePathLabel.setTextFill(Paint.valueOf(blackColor));
+        titleLabel.setTextFill(utils.DEFAULT_COLOUR);
+        filePathLabel.setTextFill(utils.DEFAULT_COLOUR);
     }
 
     public void registerProjectRequest() {

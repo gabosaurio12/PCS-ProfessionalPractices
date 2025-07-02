@@ -76,20 +76,24 @@ public class Report {
         Arrays.fill(validationFlags, true);
         int lastIndex = validationFlags.length - 1;
 
+        int REPORT_FLAG = 0;
         if (reportPath == null || reportPath.isBlank()) {
-            validationFlags[0] = false;
+            validationFlags[REPORT_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int HOURS_FLAG = 1;
         if (hours == null || hours == 0) {
-            validationFlags[1] = false;
+            validationFlags[HOURS_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int TYPE_FLAG = 2;
         if (type == null || type.isBlank()) {
-            validationFlags[2] = false;
+            validationFlags[TYPE_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int DATE_FLAG = 3;
         if (date == null) {
-            validationFlags[3] = false;
+            validationFlags[DATE_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
         return validationFlags;

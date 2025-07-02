@@ -8,7 +8,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import model.Report;
@@ -137,27 +136,29 @@ public class GUIUploadReportController {
     }
 
     public void showInvalidData(boolean[] flags) {
-        String colour = "#dd0000";
-        if (!flags[0]) {
-            filePathLabel.setTextFill(Paint.valueOf(colour));
+        int FILE_PATH_FLAG = 0;
+        if (!flags[FILE_PATH_FLAG]) {
+            filePathLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[1]) {
-            hoursLabel.setTextFill(Paint.valueOf(colour));
+        int HOURS_FLAG = 1;
+        if (!flags[HOURS_FLAG]) {
+            hoursLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[2]) {
-            typeLabel.setTextFill(Paint.valueOf(colour));
+        int TYPE_FLAG = 2;
+        if (!flags[TYPE_FLAG]) {
+            typeLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[3]) {
-            dateLabel.setTextFill(Paint.valueOf(colour));
+        int DATE_FLAG = 3;
+        if (!flags[DATE_FLAG]) {
+            dateLabel.setTextFill(utils.ERROR_COLOUR);
         }
     }
 
     public void resetLabels() {
-        String colour = "#000000";
-        filePathLabel.setTextFill(Paint.valueOf(colour));
-        hoursLabel.setTextFill(Paint.valueOf(colour));
-        typeLabel.setTextFill(Paint.valueOf(colour));
-        dateLabel.setTextFill(Paint.valueOf(colour));
+        filePathLabel.setTextFill(utils.DEFAULT_COLOUR);
+        hoursLabel.setTextFill(utils.DEFAULT_COLOUR);
+        typeLabel.setTextFill(utils.DEFAULT_COLOUR);
+        dateLabel.setTextFill(utils.DEFAULT_COLOUR);
     }
 
     public void uploadReport() {

@@ -8,7 +8,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import model.Presentation;
@@ -90,23 +89,24 @@ public class GUIEditPresentationController {
     }
 
     public void showInvalidData(boolean[] flags) {
-        String colour = "#dd0000";
-        if (!flags[0]) {
-            dateLabel.setTextFill(Paint.valueOf(colour));
+        int DATE_FLAG = 0;
+        if (!flags[DATE_FLAG]) {
+            dateLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[1]) {
-            studentLabel.setTextFill(Paint.valueOf(colour));
+        int STUDENT_FLAG = 1;
+        if (!flags[STUDENT_FLAG]) {
+            studentLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[2]) {
-            gradeLabel.setTextFill(Paint.valueOf(colour));
+        int GRADE_FLAG = 2;
+        if (!flags[GRADE_FLAG]) {
+            gradeLabel.setTextFill(utils.ERROR_COLOUR);
         }
     }
 
     public void resetLabels() {
-        String colour = "#000000";
-        dateLabel.setTextFill(Paint.valueOf(colour));
-        studentLabel.setTextFill(Paint.valueOf(colour));
-        gradeLabel.setTextFill(Paint.valueOf(colour));
+        dateLabel.setTextFill(utils.DEFAULT_COLOUR);
+        studentLabel.setTextFill(utils.DEFAULT_COLOUR);
+        gradeLabel.setTextFill(utils.DEFAULT_COLOUR);
     }
 
     public void setStudentComboBox() {

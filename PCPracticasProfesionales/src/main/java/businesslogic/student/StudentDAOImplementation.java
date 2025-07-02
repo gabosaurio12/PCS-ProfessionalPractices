@@ -88,6 +88,11 @@ public class StudentDAOImplementation implements StudentDAO {
         if (result.next()) {
             grade = result.getDouble("autoevaluationGrade");
         }
+
+        connection.close();
+        statement.close();
+        result.close();
+
         return grade;
     }
 
@@ -202,6 +207,37 @@ public class StudentDAOImplementation implements StudentDAO {
         statement.close();
         result.close();
 
+        return students;
+    }
+
+    @Override
+    public List<Student> getAllStudents() throws SQLException {
+        String query = "SELECT * FROM Student";
+        List<Student> students = new ArrayList<>();
+        try (Connection connection = CoordinatorDBConnection.getInstance().getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)
+        ) {
+           ResultSet result = statement.executeQuery();
+           while (result.next()) {
+               Student student = new Student();
+               student.setId(result.getInt("studentID"));
+               student.setTuition(result.getString("tuition"));
+               student.setName(result.getString("name"));
+               student.setFirstSurname(result.getString("firstSurname"));
+               student.setSecondSurname(result.getString("secondSurname"));
+               student.setEmail(result.getString("email"));
+               student.setUserName(result.getString("userName"));
+               student.setPassword(result.getString("password"));
+               student.setCreditAdvance(result.getInt("creditAdvance"));
+               student.setGrade(result.getFloat("grade"));
+               student.setAcademicId(result.getInt("academicId"));
+               student.setProjectId(result.getInt("projectId"));
+
+               students.add(student);
+           }
+
+           result.close();
+        }
         return students;
     }
 
@@ -360,6 +396,11 @@ public class StudentDAOImplementation implements StudentDAO {
         while (result.next()) {
             types.add(result.getString("type"));
         }
+
+        connection.close();
+        statement.close();
+        result.close();
+
         return types;
     }
 

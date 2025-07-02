@@ -17,7 +17,7 @@
             <Font name="System Bold" size="13.0" />
          </font></Label>
       <TextField fx:id="nameTextField" layoutX="65.0" layoutY="193.0" />
-      <Label fx:id="paternalSurnameLabel" layoutX="67.0" layoutY="226.0" text="Primer apelllido">
+      <Label fx:id="firstSurnameLabel" layoutX="67.0" layoutY="226.0" text="Primer apelllido">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Label>

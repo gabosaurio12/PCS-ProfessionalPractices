@@ -10,7 +10,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import model.LinkedOrganization;
@@ -155,41 +154,49 @@ public class GUIProjectDetailsController {
     }
 
     public void showInvalidData(boolean[] dataFlags) {
-        if (!dataFlags[0]) {
-            titleLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int TITLE_FLAG = 0;
+        if (!dataFlags[TITLE_FLAG]) {
+            titleLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!dataFlags[1]) {
-            openSpotsLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int OPEN_SPOTS_FLAG = 1;
+        if (!dataFlags[OPEN_SPOTS_FLAG]) {
+            openSpotsLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!dataFlags[2]) {
-            statusLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int STATUS_FLAG = 2;
+        if (!dataFlags[STATUS_FLAG]) {
+            statusLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!dataFlags[3]) {
-            projectResponsibleLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int PROJECT_RESPONSIBLE_FLAG = 3;
+        if (!dataFlags[PROJECT_RESPONSIBLE_FLAG]) {
+            projectResponsibleLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!dataFlags[4]) {
-            categoryLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int CATEGORY_FLAG = 4;
+        if (!dataFlags[CATEGORY_FLAG]) {
+            categoryLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!dataFlags[5]) {
-            beginningDateLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int BEGINNING_DATE_FLAG = 5;
+        if (!dataFlags[BEGINNING_DATE_FLAG]) {
+            beginningDateLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!dataFlags[6]) {
-            endingDateLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int ENDING_DATE_FLAG = 6;
+        if (!dataFlags[ENDING_DATE_FLAG]) {
+            endingDateLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!dataFlags[7]) {
-            organizationLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int ORGANIZATION_FLAG = 7;
+        if (!dataFlags[ORGANIZATION_FLAG]) {
+            organizationLabel.setTextFill(utils.ERROR_COLOUR);
         }
     }
 
     public void restartLabels() {
-        titleLabel.setTextFill(Paint.valueOf("#000000"));
-        openSpotsLabel.setTextFill(Paint.valueOf("#000000"));
-        statusLabel.setTextFill(Paint.valueOf("#000000"));
-        projectResponsibleLabel.setTextFill(Paint.valueOf("#000000"));
-        categoryLabel.setTextFill(Paint.valueOf("#000000"));
-        beginningDateLabel.setTextFill(Paint.valueOf("#000000"));
-        endingDateLabel.setTextFill(Paint.valueOf("#000000"));
-        organizationLabel.setTextFill(Paint.valueOf("#000000"));
+        titleLabel.setTextFill(utils.DEFAULT_COLOUR);
+        openSpotsLabel.setTextFill(utils.DEFAULT_COLOUR);
+        statusLabel.setTextFill(utils.DEFAULT_COLOUR);
+        projectResponsibleLabel.setTextFill(utils.DEFAULT_COLOUR);
+        categoryLabel.setTextFill(utils.DEFAULT_COLOUR);
+        beginningDateLabel.setTextFill(utils.DEFAULT_COLOUR);
+        endingDateLabel.setTextFill(utils.DEFAULT_COLOUR);
+        organizationLabel.setTextFill(utils.DEFAULT_COLOUR);
     }
 
     public void saveChanges() {

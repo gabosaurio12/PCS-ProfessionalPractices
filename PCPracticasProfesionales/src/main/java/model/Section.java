@@ -45,12 +45,14 @@ public class Section {
         Arrays.fill(validationFlags, true);
         int lastIndex = validationFlags.length - 1;
 
+        int NRC_FLAG = 0;
         if (nrc.isBlank()) {
-            validationFlags[0] = false;
+            validationFlags[NRC_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int PERIOD_FLAG = 1;
         if (period.isBlank()) {
-            validationFlags[1] = false;
+            validationFlags[PERIOD_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
         return validationFlags;

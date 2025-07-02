@@ -8,7 +8,6 @@ import gui.util.GUIUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import model.UniversityAffiliate;
 import org.apache.logging.log4j.LogManager;
@@ -70,20 +69,20 @@ public class GUIEditUserController {
     }
 
     public void showInvalidData(boolean[] flags) {
-        String colour = "#dd0000";
-        if (!flags[0]){
-            emailLabel.setTextFill(Paint.valueOf(colour));
+        int EMAIL_FLAG = 0;
+        if (!flags[EMAIL_FLAG]){
+            emailLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[1]) {
-            usernameLabel.setTextFill(Paint.valueOf(colour));
+        int USERNAME_FLAG = 1;
+        if (!flags[USERNAME_FLAG]) {
+            usernameLabel.setTextFill(utils.ERROR_COLOUR);
 
         }
     }
 
     public void resetLabels() {
-        String colour = "#000000";
-        usernameLabel.setTextFill(Paint.valueOf(colour));
-        emailLabel.setTextFill(Paint.valueOf(colour));
+        usernameLabel.setTextFill(utils.DEFAULT_COLOUR);
+        emailLabel.setTextFill(utils.DEFAULT_COLOUR);
     }
 
     public void saveChanges() {

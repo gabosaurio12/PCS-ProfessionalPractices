@@ -107,35 +107,40 @@ public class GUIAcademicDetailsController {
     }
 
     public void showInvalidData(boolean[] flags) {
-        if (!flags[0]) {
+        int PERSONAL_NUMBER_FLAG = 0;
+        if (!flags[PERSONAL_NUMBER_FLAG]) {
             utils.createAlert("Número personal inválido",
                     "El número personal debe ser de 5 digitos o menos");
             personalNumberLabel.setTextFill(Paint.valueOf("#dd0000"));
         }
-        if (!flags[1]) {
-            nameLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int NAME_FLAG = 1;
+        if (!flags[NAME_FLAG]) {
+            nameLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[2]) {
-            firstSurnameLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int FIRST_SURNAME_FLAG = 2;
+        if (!flags[FIRST_SURNAME_FLAG]) {
+            firstSurnameLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[3]) {
-            emailLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int EMAIL_FLAG = 3;
+        if (!flags[EMAIL_FLAG]) {
+            emailLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[4]) {
-            roleLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int ROLE_FLAG = 4;
+        if (!flags[ROLE_FLAG]) {
+            roleLabel.setTextFill(utils.ERROR_COLOUR);
         }
         if (usernameTextField.getText().isBlank()) {
-            usernameLabel.setTextFill(Paint.valueOf("#dd0000"));
+            usernameLabel.setTextFill(utils.ERROR_COLOUR);
         }
     }
 
     public void resetLabels() {
-        personalNumberLabel.setTextFill(Paint.valueOf("#000000"));
-        nameLabel.setTextFill(Paint.valueOf("#000000"));
-        firstSurnameLabel.setTextFill(Paint.valueOf("#000000"));
-        emailLabel.setTextFill(Paint.valueOf("#000000"));
-        roleLabel.setTextFill(Paint.valueOf("#000000"));
-        usernameLabel.setTextFill(Paint.valueOf("#000000"));
+        personalNumberLabel.setTextFill(utils.DEFAULT_COLOUR);
+        nameLabel.setTextFill(utils.DEFAULT_COLOUR);
+        firstSurnameLabel.setTextFill(utils.DEFAULT_COLOUR);
+        emailLabel.setTextFill(utils.DEFAULT_COLOUR);
+        roleLabel.setTextFill(utils.DEFAULT_COLOUR);
+        usernameLabel.setTextFill(utils.DEFAULT_COLOUR);
     }
 
     public boolean validateUsername(Academic academic) throws SQLException {

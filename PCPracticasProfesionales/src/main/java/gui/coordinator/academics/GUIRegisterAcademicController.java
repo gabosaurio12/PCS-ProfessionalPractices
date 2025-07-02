@@ -32,7 +32,7 @@ public class GUIRegisterAcademicController {
     @FXML private ComboBox<String> academicPositionBox;
     @FXML private Label personalNumberLabel;
     @FXML private Label nameLabel;
-    @FXML private Label paternalSurnameLabel;
+    @FXML private Label firstSurnameLabel;
     @FXML private Label emailLabel;
     @FXML private Label roleLabel;
 
@@ -89,21 +89,26 @@ public class GUIRegisterAcademicController {
     }
 
     public void showInvalidData(boolean[] flags) {
-        if (!flags[0]) {
+        int PERSONAL_NUMBER_FLAG = 0;
+        if (!flags[PERSONAL_NUMBER_FLAG]) {
             utils.createAlert("Número personal inválido",
                     "El número personal debe ser de 5 digitos o menos");
             personalNumberLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[1]) {
+        int NAME_FLAG = 1;
+        if (!flags[NAME_FLAG]) {
             nameLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[2]) {
-            paternalSurnameLabel.setTextFill(utils.ERROR_COLOUR);
+        int FIRST_SURNAME_FLAG = 2;
+        if (!flags[FIRST_SURNAME_FLAG]) {
+            firstSurnameLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[3]) {
+        int EMAIL_FLAG = 3;
+        if (!flags[EMAIL_FLAG]) {
             emailLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[4]) {
+        int ROLE_FLAG = 4;
+        if (!flags[ROLE_FLAG]) {
             roleLabel.setTextFill(utils.ERROR_COLOUR);
         }
     }
@@ -111,7 +116,7 @@ public class GUIRegisterAcademicController {
     public void resetLabels() {
         personalNumberLabel.setTextFill(utils.DEFAULT_COLOUR);
         nameLabel.setTextFill(utils.DEFAULT_COLOUR);
-        paternalSurnameLabel.setTextFill(utils.DEFAULT_COLOUR);
+        firstSurnameLabel.setTextFill(utils.DEFAULT_COLOUR);
         emailLabel.setTextFill(utils.DEFAULT_COLOUR);
         roleLabel.setTextFill(utils.DEFAULT_COLOUR);
     }

@@ -165,7 +165,7 @@ public class GUIReassignProjectController {
 
     public void generateAssignationDocument(Map<String, String> filler, String documentPath) throws SQLException {
         String templatePath = "/Users/gabosaurio/Documents/UV/4° Semestre/PCS/ProyectoFinal/" +
-                "PCS-PracticasPro/PCPracticasProfesionales/src/main/resources/" +
+                "PCS-ProfessionalPractices/PCPracticasProfesionales/src/main/resources/" +
                 "AssignationDocumentsTemplates/Formato_Oficio_Asignación.docx";
         DocsUtil docsUtil = new DocsUtil();
         try {
@@ -196,9 +196,10 @@ public class GUIReassignProjectController {
             ProjectAssignation assignation = new ProjectAssignation();
             assignation.setProjectId(project.getProjectID());
             assignation.setStudentId(student.getId());
-            String documentPath = ("/Users/gabosaurio/Documents/UV/4° Semestre/PCS/ProyectoFinal/" +
-                    "PCS-PracticasPro/PCPracticasProfesionales/OficiosAsignacion/RE-OficioAsignacion").concat(
-                    student.getNoSpacedName()).concat(".docx");
+            String documentPath = ("/Users/gabosaurio/Documents/UV/4° Semestre/PCS/" +
+                    "ProyectoFinal/PCS-ProfessionalPractices/PCPracticasProfesionales/" +
+                    "OficiosAsignacion/OficioAsignacion").concat(
+                            student.getNoSpacedName()).concat(".docx");
             assignation.setDocumentPath(documentPath);
             Properties coordinatorProperties = UserDataConfig.loadProperties();
             int coordinatorID = Integer.parseInt(coordinatorProperties.getProperty("user.id"));

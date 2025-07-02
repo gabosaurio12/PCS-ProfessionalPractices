@@ -8,7 +8,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import model.LinkedOrganization;
 import model.ProjectResponsible;
@@ -74,18 +73,28 @@ public class GUIProjectResponsibleDetailsController {
     }
 
     public void showInvalidData(boolean[] dataFlags) {
-        if (!dataFlags[0]) {
-            nameLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int NAME_FLAG = 0;
+        if (!dataFlags[NAME_FLAG]) {
+            nameLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!dataFlags[1]) {
-            emailLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int EMAIL_FLAG = 1;
+        if (!dataFlags[EMAIL_FLAG]) {
+            emailLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!dataFlags[2]) {
-            organizationLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int ORGANIZATION_FLAG = 2;
+        if (!dataFlags[ORGANIZATION_FLAG]) {
+            organizationLabel.setTextFill(utils.ERROR_COLOUR);
         }
     }
 
+    public void resetLabels() {
+        nameLabel.setTextFill(utils.DEFAULT_COLOUR);
+        emailLabel.setTextFill(utils.DEFAULT_COLOUR);
+        organizationLabel.setTextFill(utils.DEFAULT_COLOUR);
+    }
+
     public void updateProjectResponsible() {
+        resetLabels();
         ProjectResponsible responsible = new ProjectResponsible();
         getTextFields(responsible);
         boolean[] validationFlags = responsible.validateData();

@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -46,7 +45,7 @@ public class GUIRegisterAutoevaluationController {
     }
 
     public void saveGrade() {
-        gradeLabel.setTextFill(Paint.valueOf("#000000"));
+        gradeLabel.setTextFill(utils.DEFAULT_COLOUR);
         Double grade = autoEvaluationGradeSpinner.getValue();
         if (grade > 0 && grade < 51) {
             try {
@@ -63,7 +62,7 @@ public class GUIRegisterAutoevaluationController {
         } else {
             utils.createAlert("Campos inválidos",
                     "La calificación debe ser mayor a 0 y menor o igual a 10");
-            gradeLabel.setTextFill(Paint.valueOf("#dd0000"));
+            gradeLabel.setTextFill(utils.ERROR_COLOUR);
         }
     }
 

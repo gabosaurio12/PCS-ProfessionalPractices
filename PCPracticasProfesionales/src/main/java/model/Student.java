@@ -104,38 +104,46 @@ public class Student extends UniversityAffiliate {
         Arrays.fill(validationFlags, true);
         int lastIndex = validationFlags.length - 1;
 
+        int TUITION_FLAG = 0;
         if (!validateTuition()) {
-            validationFlags[0] = false;
+            validationFlags[TUITION_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int NAME_FLAG = 1;
         if (getName() == null || getName().isBlank()) {
-            validationFlags[1] = false;
+            validationFlags[NAME_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int FIRST_SURNAME_FLAG = 2;
         if (getFirstSurname() == null || getFirstSurname().isBlank()) {
-            validationFlags[2] = false;
+            validationFlags[FIRST_SURNAME_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int EMAIL_FLAG = 3;
         if (!validateEmail()) {
-            validationFlags[3] = false;
+            validationFlags[EMAIL_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int CREDIT_ADVANCE_FLAG = 4;
         int minCreditAdvance = 292;
         int maxCreditAdvance = 365;
         if (creditAdvance == null || creditAdvance < minCreditAdvance || creditAdvance > maxCreditAdvance) {
-            validationFlags[4] = false;
+            validationFlags[CREDIT_ADVANCE_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int ACADEMIC_FLAG = 5;
         if (academicId == null) {
-            validationFlags[5] = false;
+            validationFlags[ACADEMIC_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int USERNAME_FLAG = 6;
         if (getUserName() == null || getUserName().isBlank()) {
-            validationFlags[6] = false;
+            validationFlags[USERNAME_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int PASSWORD_FLAG = 7;
         if (getPassword() == null || getPassword().isBlank()) {
-            validationFlags[7] = false;
+            validationFlags[PASSWORD_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
 

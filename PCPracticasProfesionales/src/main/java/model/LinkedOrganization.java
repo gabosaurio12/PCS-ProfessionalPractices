@@ -88,25 +88,29 @@ public class LinkedOrganization {
         Arrays.fill(validationFlags, true);
         int lastIndex = validationFlags.length - 1;
 
-
+        int NAME_FLAG = 0;
         if (name.isBlank()) {
-            validationFlags[0] = false;
+            validationFlags[NAME_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int DESCRIPTION_FLAG = 1;
         if (description.isBlank()) {
-            validationFlags[1] = false;
+            validationFlags[DESCRIPTION_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int ADDRESS_FLAG = 2;
         if (address.isBlank()) {
-            validationFlags[2] = false;
+            validationFlags[ADDRESS_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int EMAIL_FLAG = 3;
         if (!validateEmail()) {
-            validationFlags[3] = false;
+            validationFlags[EMAIL_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int ALTER_CONTACT = 4;
         if (alterContact.isBlank()) {
-            validationFlags[4] = false;
+            validationFlags[ALTER_CONTACT] = false;
             validationFlags[lastIndex] = false;
         }
         return validationFlags;

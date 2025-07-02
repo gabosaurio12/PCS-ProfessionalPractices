@@ -37,8 +37,12 @@ public class GUICronogramController {
     }
 
     public void openGUIMainPage() {
-        utils.openWindow("/fxml/Student/GUIMainPageStudent.fxml",
-                "Menú Principal", blueFringe);
+        GUIMainPageStudentController controller = utils.openWindow(
+                "/fxml/Student/GUIMainPageStudent.fxml",
+                "Menú Principal",
+                GUIMainPageStudentController.class,
+                blueFringe);
+        controller.init();
     }
 
     public void setCalendar() {

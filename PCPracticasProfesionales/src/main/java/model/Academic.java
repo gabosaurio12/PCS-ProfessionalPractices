@@ -82,24 +82,29 @@ public class Academic extends UniversityAffiliate {
         Arrays.fill(validationFlags, true);
         int lastIndex = validationFlags.length - 1;
 
+        int PERSONAL_NUMBER_FLAG = 0;
         if (!validatePersonalNumber()) {
-            validationFlags[0] = false;
+            validationFlags[PERSONAL_NUMBER_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int NAME_FLAG = 1;
         if (getName().isBlank()) {
-            validationFlags[1] = false;
+            validationFlags[NAME_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int FIRST_SURNAME_FLAG = 2;
         if (getFirstSurname().isBlank()) {
-            validationFlags[2] = false;
+            validationFlags[FIRST_SURNAME_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int EMAIL_FLAG = 3;
         if (!validateEmail()) {
-            validationFlags[3] = false;
+            validationFlags[EMAIL_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int ROLE_FLAG = 4;
         if (role.isBlank()) {
-            validationFlags[4] = false;
+            validationFlags[ROLE_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
         return validationFlags;

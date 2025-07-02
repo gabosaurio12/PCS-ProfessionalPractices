@@ -88,16 +88,19 @@ public class ProjectResponsible {
         Arrays.fill(validationFlags, true);
         int lastIndex = validationFlags.length - 1;
 
+        int NAME_FLAG = 0;
         if (name == null || name.isBlank()) {
-            validationFlags[0] = false;
+            validationFlags[NAME_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int EMAIL_FLAG = 1;
         if (!validateEmail()) {
-            validationFlags[1] = false;
+            validationFlags[EMAIL_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int ORGANIZATION_FLAG = 2;
         if (linkedOrganizationId == null) {
-            validationFlags[2] = false;
+            validationFlags[ORGANIZATION_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
 

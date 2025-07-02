@@ -116,37 +116,44 @@ public class Project {
         Arrays.fill(validationFlags, true);
         int lastIndex = validationFlags.length - 1;
 
-
+        int TITLE_FLAG = 0;
         if (title.isBlank()) {
-            validationFlags[0] = false;
+            validationFlags[TITLE_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int OPEN_SPOTS_FLAG = 1;
         if (openSpots == null) {
-            validationFlags[1] = false;
+            validationFlags[OPEN_SPOTS_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int STATUS_FLAG = 2;
         if (status.isBlank()) {
-            validationFlags[2] = false;
+            validationFlags[STATUS_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int RESPONSIBLE_FLAG = 3;
         if (projectResponsibleId == null) {
-            validationFlags[3] = false;
+            validationFlags[RESPONSIBLE_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int CATEGORY_FLAG = 4;
         if (category.isBlank()) {
-            validationFlags[4] = false;
+            validationFlags[CATEGORY_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int BEGINNING_DATE_FLAG = 5;
         if (beginningDate == null || beginningDate.equals(new Date(0))) {
-            validationFlags[5] = false;
+            validationFlags[BEGINNING_DATE_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int ENDING_DATE_FLAG = 6;
         if (endingDate == null || endingDate.equals(new Date(0))) {
-            validationFlags[6] = false;
+            validationFlags[ENDING_DATE_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int ORGANIZATION_FLAG = 7;
         if (linkedOrganizationId == null) {
-            validationFlags[7] = false;
+            validationFlags[ORGANIZATION_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
 

@@ -1,6 +1,5 @@
 package gui.coordinator.presentations;
 
-import businesslogic.system.SystemDAOImplementation;
 import businesslogic.presentation.PresentationDAOImplementation;
 import businesslogic.student.StudentDAOImplementation;
 import gui.util.GUIUtils;
@@ -8,11 +7,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import model.Presentation;
-import model.Section;
 import model.Student;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -61,8 +58,7 @@ public class GUICreatePresentationController {
         List<Student> students = new ArrayList<>();
         try {
             StudentDAOImplementation studentDAO = new StudentDAOImplementation();
-            Section section = new SystemDAOImplementation().getCurrentSection();
-            students = studentDAO.getStudents(section.getPeriod());
+            students = studentDAO.getAllStudents();
         } catch (SQLException e) {
             utils.createAlert("Error al recopilar estudiantes",
                     "Vuelva a intentar cargar la página");
@@ -83,19 +79,19 @@ public class GUICreatePresentationController {
     }
 
     public void showInvalidData(boolean[] flags) {
-        String colour = "#dd0000";
-        if (!flags[0]) {
-            dateLabel.setTextFill(Paint.valueOf(colour));
+        int DATE_FLAG = 0;
+        if (!flags[DATE_FLAG]) {
+            dateLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[1]) {
-            studentLabel.setTextFill(Paint.valueOf(colour));
+        int STUDENT_FLAG = 1;
+        if (!flags[STUDENT_FLAG]) {
+            studentLabel.setTextFill(utils.ERROR_COLOUR);
         }
     }
 
     public void resetLabels() {
-        String colour = "#000000";
-        dateLabel.setTextFill(Paint.valueOf(colour));
-        studentLabel.setTextFill(Paint.valueOf(colour));
+        dateLabel.setTextFill(utils.DEFAULT_COLOUR);
+        studentLabel.setTextFill(utils.DEFAULT_COLOUR);
     }
 
     public void createPresentation() {

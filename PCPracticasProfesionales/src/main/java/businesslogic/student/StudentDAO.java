@@ -21,6 +21,8 @@ public interface StudentDAO {
 
     List<Student> getStudents(String period) throws SQLException;
 
+    List<Student> getAllStudents() throws SQLException;
+
     int dropStudent(int id) throws SQLException;
 
     int assignSection(int studentId, int sectionId) throws SQLException;

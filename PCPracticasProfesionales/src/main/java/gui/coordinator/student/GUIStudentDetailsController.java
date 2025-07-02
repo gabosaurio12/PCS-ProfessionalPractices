@@ -10,7 +10,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import model.Academic;
 import model.Section;
@@ -124,35 +123,41 @@ public class GUIStudentDetailsController {
     }
 
     public void showInvalidData(boolean[] flags) {
-        if (!flags[0]) {
-            tuitionLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int TUITION_FLAG = 0;
+        if (!flags[TUITION_FLAG]) {
+            tuitionLabel.setTextFill(utils.ERROR_COLOUR);
             utils.createAlert("La matrícula es inválida",
                     "El tamaño de la matrícula debe ser de 9 caracteres");
         }
-        if (!flags[1]) {
-            nameLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int NAME_FLAG = 1;
+        if (!flags[NAME_FLAG]) {
+            nameLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[2]) {
-            firstSurnameLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int FIRST_SURNAME_FLAG = 2;
+        if (!flags[FIRST_SURNAME_FLAG]) {
+            firstSurnameLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[3]) {
-            emailLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int EMAIL_FLAG = 3;
+        if (!flags[EMAIL_FLAG]) {
+            emailLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[4]) {
-            creditAdvanceLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int CREDIT_ADVANCE_FLAG = 4;
+        if (!flags[CREDIT_ADVANCE_FLAG]) {
+            creditAdvanceLabel.setTextFill(utils.ERROR_COLOUR);
         }
-        if (!flags[5]) {
-            academicLabel.setTextFill(Paint.valueOf("#dd0000"));
+        int ACADEMIC_FLAG = 5;
+        if (!flags[ACADEMIC_FLAG]) {
+            academicLabel.setTextFill(utils.ERROR_COLOUR);
         }
     }
 
     public void resetLabels() {
-        tuitionLabel.setTextFill(Paint.valueOf("#000000"));
-        nameLabel.setTextFill(Paint.valueOf("#000000"));
-        firstSurnameLabel.setTextFill(Paint.valueOf("#000000"));
-        emailLabel.setTextFill(Paint.valueOf("#000000"));
-        creditAdvanceLabel.setTextFill(Paint.valueOf("#000000"));
-        academicLabel.setTextFill(Paint.valueOf("#000000"));
+        tuitionLabel.setTextFill(utils.DEFAULT_COLOUR);
+        nameLabel.setTextFill(utils.DEFAULT_COLOUR);
+        firstSurnameLabel.setTextFill(utils.DEFAULT_COLOUR);
+        emailLabel.setTextFill(utils.DEFAULT_COLOUR);
+        creditAdvanceLabel.setTextFill(utils.DEFAULT_COLOUR);
+        academicLabel.setTextFill(utils.DEFAULT_COLOUR);
     }
 
     public boolean validateUsername(Student student) throws SQLException {

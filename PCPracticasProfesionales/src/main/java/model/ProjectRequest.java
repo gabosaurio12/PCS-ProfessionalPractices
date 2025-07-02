@@ -48,12 +48,14 @@ public class ProjectRequest {
         Arrays.fill(validationFlags, true);
         int lastIndex = validationFlags.length - 1;
 
+        int NAME_FLAG = 0;
         if (name == null || name.isBlank()) {
-            validationFlags[0] = false;
+            validationFlags[NAME_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int DOCUMENT_FLAG = 1;
         if (documentPath == null || documentPath.isBlank()) {
-            validationFlags[1] = false;
+            validationFlags[DOCUMENT_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
         return validationFlags;

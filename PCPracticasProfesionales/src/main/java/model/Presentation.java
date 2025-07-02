@@ -1,7 +1,6 @@
 package model;
 
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Presentation {
@@ -59,17 +58,20 @@ public class Presentation {
         Arrays.fill(validationFlags, true);
         int lastIndex = validationFlags.length - 1;
 
+        int DATE_FLAG = 0;
         if (date == null) {
-            validationFlags[0] = false;
+            validationFlags[DATE_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int STUDENT_FLAG = 1;
         if (studentId == null) {
-            validationFlags[1] = false;
+            validationFlags[STUDENT_FLAG] = false;
             validationFlags[lastIndex] = false;
         }
+        int PRESENTATION_FLAG = 2;
         if (presentationGrade != null) {
             if (presentationGrade < 0 || presentationGrade > 100) {
-                validationFlags[2] = false;
+                validationFlags[PRESENTATION_FLAG] = false;
                 validationFlags[lastIndex] = false;
             }
         }
