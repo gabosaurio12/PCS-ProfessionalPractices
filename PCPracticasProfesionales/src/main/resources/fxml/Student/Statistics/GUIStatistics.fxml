@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.student.statistics.GUIStatisticsController">
+   <children>
+      <Rectangle fx:id="blueFringe" fill="#326bc9" height="130.0" layoutY="50.0" smooth="false" stroke="#326bc9" strokeType="INSIDE" width="1000.0" />
+      <Rectangle fill="#4daa59" height="50.0" smooth="false" stroke="#4daa59" strokeType="INSIDE" width="1000.0" />
+      <Label layoutX="338.0" layoutY="87.0" prefHeight="56.0" prefWidth="376.0" text="Prácticas Profesionales" textFill="#fcfcfc">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Label>
+      <Label layoutX="743.0" layoutY="12.0" text="Universidad Veracruzana" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="studentLabel" layoutX="65.0" layoutY="207.0" text="ESTUDIANTE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="393.0" layoutY="209.0" text="Horas validadas:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="hoursLabel" layoutX="523.0" layoutY="209.0" text="HORAS">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="631.0" layoutY="209.0" text="Calificación de la materia:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="gradeLabel" layoutX="827.0" layoutY="209.0" text="CALIFICACIÓN">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="84.0" layoutY="257.0" text="Presentaciones">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="440.0" layoutY="257.0" text="Documentos">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="presentationsTable" layoutX="73.0" layoutY="300.0" prefHeight="200.0" prefWidth="296.0">
+        <columns>
+          <TableColumn fx:id="presentationColumn" prefWidth="208.73615264892578" text="Presentación" />
+          <TableColumn fx:id="averageColumn" prefWidth="85.26387023925781" text="Promedio" />
+        </columns>
+      </TableView>
+      <TableView fx:id="documentsTable" layoutX="440.0" layoutY="300.0" prefHeight="200.0" prefWidth="491.0">
+         <columns>
+            <TableColumn fx:id="documentColumn" prefWidth="489.0" text="Documento" />
+         </columns>
+      </TableView>
+      <Button layoutX="180.0" layoutY="530.0" mnemonicParsing="false" onAction="#viewPresentationDetails" text="Ver detalles" />
+      <Button layoutX="665.0" layoutY="530.0" mnemonicParsing="false" onAction="#closeDetails" text="Aceptar" />
+   </children>
+</Pane>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guitest.coordinator.project.GUIProjectDetailsTest.GUIProjectsController">
+    <children>
+        <TableView id="projectsTable" fx:id="projectsTable" layoutX="50.0" layoutY="243.0" onMouseClicked="#openGUIProjectDetailsFromClicks" prefHeight="420.0" prefWidth="751.0">
+            <columns>
+                <TableColumn id="projectNameColumn" fx:id="projectNameColumn" prefWidth="148.0" text="Nombre Proyecto" />
+                <TableColumn id="organizationColumn" fx:id="organizationColumn" prefWidth="160.5" text="Organización" />
+                <TableColumn id="startDateColumn" fx:id="startDateColumn" prefWidth="108.0" text="Fecha de Inicio" />
+                <TableColumn id="endDateColumn" fx:id="endDateColumn" prefWidth="111.5" text="Fecha de Fin" />
+                <TableColumn id="statusColumn" fx:id="statusColumn" prefWidth="104.0" text="Estado" />
+            <TableColumn fx:id="responsibleColumn" prefWidth="116.0" text="responsable" />
+            </columns>
+        </TableView>
+        <Button id="newProjectButton" fx:id="newProjectButton" disable="true" layoutX="841.0" layoutY="255.0" mnemonicParsing="false" onAction="#openRegisterProjectPage" prefHeight="40.0" prefWidth="115.0" style="-fx-background-color: #4daa59;" text="Nuevo" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+        <Button layoutX="841.0" layoutY="325.0" mnemonicParsing="false" onAction="#openGUIProjectDetailsFromButton" prefHeight="40.0" prefWidth="115.0" style="-fx-background-color: #2d7be8;" text="Editar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+        <Button layoutX="841.0" layoutY="606.0" mnemonicParsing="false" onAction="#openAdminMainPage" prefHeight="40.0" prefWidth="115.0" style="-fx-background-color: #c9c9c9;" text="Cancelar">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Slider id="projectsManagerSlider" fx:id="projectsManagerSlider" blockIncrement="1.0" layoutX="876.0" layoutY="490.0" majorTickUnit="1.0" max="1.0" minorTickCount="0" onDragDetected="#setProjectsRegistration" prefHeight="15.0" prefWidth="19.0" showTickMarks="true" snapToTicks="true" />
+      <Label layoutX="854.0" layoutY="464.0" text="Habilitar registro" />
+      <Rectangle fx:id="blueFringe" fill="#326bc9" height="130.0" layoutY="50.0" smooth="false" stroke="#326bc9" strokeType="INSIDE" width="1000.0" />
+      <Rectangle fill="#4daa59" height="50.0" smooth="false" stroke="#4daa59" strokeType="INSIDE" width="1000.0" />
+      <Label layoutX="338.0" layoutY="87.0" prefHeight="56.0" prefWidth="376.0" text="Prácticas Profesionales" textFill="#fcfcfc">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Label>
+      <Label layoutX="743.0" layoutY="12.0" text="Universidad Veracruzana" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="841.0" layoutY="392.0" mnemonicParsing="false" onAction="#deleteProject" prefHeight="40.0" prefWidth="115.0" style="-fx-background-color: #d70000;" text="Eliminar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="periodComboBox" layoutX="824.0" layoutY="550.0" onAction="#refreshTable" prefWidth="150.0" />
+      <Label layoutX="878.0" layoutY="522.0" text="Periodo" />
+    </children>
+</Pane>

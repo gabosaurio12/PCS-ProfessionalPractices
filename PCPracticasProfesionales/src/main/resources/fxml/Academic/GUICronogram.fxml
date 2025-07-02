@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.coordinator.GUICronogramController">
+   <children>
+      <Rectangle fx:id="blueFringe" fill="#326bc9" height="130.0" layoutY="50.0" smooth="false" stroke="#326bc9" strokeType="INSIDE" width="1000.0" />
+      <Rectangle fill="#4daa59" height="50.0" smooth="false" stroke="#4daa59" strokeType="INSIDE" width="1000.0" />
+      <Label layoutX="338.0" layoutY="87.0" prefHeight="56.0" prefWidth="376.0" text="Prácticas Profesionales" textFill="#fcfcfc">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Label>
+      <Label layoutX="743.0" layoutY="12.0" text="Universidad Veracruzana" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="periodComboBox" layoutX="743.0" layoutY="217.0" onAction="#loadEventsFromJSON" prefWidth="150.0" />
+      <Button layoutX="831.0" layoutY="761.0" mnemonicParsing="false" onAction="#saveEventsInJSON" text="Aceptar" />
+      <VBox fx:id="calendarContainer" layoutX="100.0" layoutY="275.0" prefHeight="450.0" prefWidth="800.0" />
+   </children>
+</Pane>

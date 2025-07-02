@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.evaluator.GUIMainPageEvaluatorController">
+   <children>
+      <Rectangle fx:id="blueFringe" fill="#326bc9" height="130.0" layoutY="50.0" smooth="false" stroke="#326bc9" strokeType="INSIDE" width="1000.0" />
+      <Rectangle fill="#4daa59" height="50.0" smooth="false" stroke="#4daa59" strokeType="INSIDE" width="1000.0" />
+      <MenuBar layoutX="-4.0" prefHeight="27.0" prefWidth="76.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Cuenta">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openGUIEditUser" text="Editar" />
+                  <MenuItem mnemonicParsing="false" onAction="#closeSession" text="Cerrar sesión" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Button fx:id="closeButton" layoutX="442.0" layoutY="640.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="58.0" prefWidth="134.0" style="-fx-background-color: #d70000;" text="Salir" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Label layoutX="338.0" layoutY="87.0" prefHeight="56.0" prefWidth="376.0" text="Prácticas Profesionales" textFill="#fcfcfc">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Label>
+      <Label layoutX="743.0" layoutY="12.0" text="Universidad Veracruzana" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="376.0" layoutY="294.0" mnemonicParsing="false" onAction="#openGUICronogram" prefHeight="58.0" prefWidth="266.0" style="-fx-background-color: #4daa59;" text="Cronograma" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="presentationsButton" layoutX="376.0" layoutY="208.0" mnemonicParsing="false" onAction="#openGUIPresentations" prefHeight="58.0" prefWidth="266.0" style="-fx-background-color: #4daa59;" text="Presentaciones" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.coordinator.student.GUIStudentsController">
+   <children>
+      <TableView id="studentsTable" fx:id="studentsTable" layoutX="65.0" layoutY="247.0" onMouseClicked="#openGUIStudentDetailsFromClicks" prefHeight="420.0" prefWidth="690.0">
+        <columns>
+          <TableColumn id="tuitionColumn" fx:id="tuitionColumn" prefWidth="112.76478576660156" text="Matricula" />
+          <TableColumn id="nameColumn" fx:id="nameColumn" prefWidth="123.71861267089844" text="Nombre" />
+            <TableColumn id="lastNamesColumn" fx:id="lastNamesColumn" prefWidth="151.68731689453125" text="Apellidos" />
+            <TableColumn id="academicColumn" fx:id="academicColumn" minWidth="0.0" prefWidth="109.31268310546875" text="Maestro" />
+            <TableColumn id="userNameColumn" fx:id="userNameColumn" prefWidth="83.7098388671875" text="Usuario" />
+            <TableColumn id="projectColumn" fx:id="projectColumn" prefWidth="105.06243896484375" text="Proyecto" />
+        </columns>
+      </TableView>
+      <Button fx:id="newButton" layoutX="809.0" layoutY="264.0" mnemonicParsing="false" onAction="#openRegisterStudentPage" prefHeight="40.0" prefWidth="134.0" style="-fx-background-color: #4daa59;" text="Nuevo" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="cancelButton" layoutX="819.0" layoutY="685.0" mnemonicParsing="false" onAction="#openAdminMainPage" prefHeight="40.0" prefWidth="115.0" style="-fx-background-color: #c9c9c9;" text="Cancelar">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="assignProjectButton" layoutX="810.0" layoutY="390.0" mnemonicParsing="false" onAction="#openAssignProjectPage" prefHeight="40.0" prefWidth="134.0" style="-fx-background-color: #a96bcd;" text="Asignar Proyecto" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Rectangle fx:id="blueFringe" fill="#326bc9" height="130.0" layoutY="43.0" smooth="false" stroke="#326bc9" strokeType="INSIDE" width="1000.0" />
+      <Rectangle fill="#4daa59" height="50.0" layoutY="-7.0" smooth="false" stroke="#4daa59" strokeType="INSIDE" width="1000.0" />
+      <MenuBar layoutX="-4.0" layoutY="-7.0" prefHeight="50.0" prefWidth="137.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Cuenta">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Editar" />
+                  <MenuItem mnemonicParsing="false" onAction="#closeSession" text="Cerrar sesión" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Label layoutX="338.0" layoutY="80.0" prefHeight="56.0" prefWidth="376.0" text="Prácticas Profesionales" textFill="#fcfcfc">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Label>
+      <Label layoutX="743.0" layoutY="5.0" text="Universidad Veracruzana" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="editButton" layoutX="809.0" layoutY="327.0" mnemonicParsing="false" onAction="#openGUIStudentDetailsFromButton" prefHeight="40.0" prefWidth="134.0" style="-fx-background-color: #2d7be8;" text="Editar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <ComboBox fx:id="periodComboBox" layoutX="802.0" layoutY="547.0" onAction="#refreshTable" prefWidth="150.0" />
+      <Button fx:id="deleteButton" layoutX="810.0" layoutY="455.0" mnemonicParsing="false" onAction="#deleteStudent" prefHeight="40.0" prefWidth="134.0" style="-fx-background-color: #d70000;" text="Eliminar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="856.0" layoutY="519.0" text="Periodo" />
+      <Button fx:id="statisticsButton" layoutX="819.0" layoutY="593.0" mnemonicParsing="false" onAction="#openGUIStatistics" prefHeight="40.0" prefWidth="115.0" style="-fx-background-color: #e49c00;" text="Ver estadísticas" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
