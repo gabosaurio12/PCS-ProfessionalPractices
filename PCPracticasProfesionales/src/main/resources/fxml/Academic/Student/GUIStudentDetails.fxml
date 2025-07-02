@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.academic.student.GUIStudentDetailsController">
+   <children>
+      <Rectangle fx:id="blueFringe" fill="#326bc9" height="92.0" layoutY="-8.0" smooth="false" stroke="TRANSPARENT" strokeType="INSIDE" width="700.0" />
+      <Rectangle fill="#4daa59" height="28.0" smooth="false" stroke="TRANSPARENT" strokeType="INSIDE" width="700.0" />
+      <Label layoutX="539.0" layoutY="5.0" text="Universidad Veracruzana" textFill="WHITE" />
+      <Label layoutX="274.0" layoutY="39.0" text="Prácticas Profesionales" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="saveButton" layoutX="548.0" layoutY="436.0" mnemonicParsing="false" onAction="#saveChanges" style="-fx-background-color: #4daa59;" text="Guardar" textFill="WHITE" />
+      <Button fx:id="cancelButton" layoutX="434.0" layoutY="436.0" mnemonicParsing="false" onAction="#openStudentsPage" style="-fx-background-color: #d9d9d9;" text="Cancelar" />
+      <Label fx:id="nameLabel" layoutX="139.0" layoutY="168.0" text="Nombre">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="nameTextField" layoutX="139.0" layoutY="188.0" />
+      <Label fx:id="firstSurnameLabel" layoutX="139.0" layoutY="221.0" text="Primer apellido">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="firstSurnameTextField" layoutX="139.0" layoutY="241.0" />
+      <Label fx:id="secondSurnameLabel" layoutX="139.0" layoutY="273.0" text="Segundo apellido">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="secondSurnameTextField" layoutX="139.0" layoutY="294.0" />
+      <Label fx:id="emailLabel" layoutX="448.0" layoutY="112.0" text="Correo">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="emailTextField" layoutX="447.0" layoutY="132.0" />
+      <Label fx:id="academicLabel" layoutX="448.0" layoutY="271.0" text="Academico">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <ChoiceBox fx:id="academicBox" layoutX="447.0" layoutY="291.0" prefHeight="26.0" prefWidth="159.0" />
+      <Label layoutX="448.0" layoutY="165.0" text="Avance crediticio">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="139.0" layoutY="112.0" text="Matricula">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label fx:id="usernameLabel" layoutX="448.0" layoutY="218.0" text="Nombre de usuario">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="userNameTextField" layoutX="447.0" layoutY="238.0" />
+      <Label fx:id="gradeLabel" layoutX="139.0" layoutY="328.0" text="Calificación">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="gradeTextField" layoutX="140.0" layoutY="348.0" />
+      <Label fx:id="tuitionLabel" layoutX="139.0" layoutY="136.0" text="Matricula" />
+      <Label fx:id="creditAdvanceLabel" layoutX="448.0" layoutY="192.0" text="Avance crediticio" />
+   </children>
+</Pane>

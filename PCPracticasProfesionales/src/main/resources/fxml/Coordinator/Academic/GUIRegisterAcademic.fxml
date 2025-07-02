@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.coordinator.academics.GUIRegisterAcademicController">
+   <children>
+      <Rectangle fx:id="blueFringe" fill="#326bc9" height="92.0" smooth="false" stroke="TRANSPARENT" strokeType="INSIDE" width="600.0" />
+      <Rectangle fill="#4daa59" height="28.0" smooth="false" stroke="TRANSPARENT" strokeType="INSIDE" width="600.0" />
+      <Label fx:id="nameLabel" layoutX="67.0" layoutY="173.0" text="Nombre">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="nameTextField" layoutX="65.0" layoutY="193.0" />
+      <Label fx:id="paternalSurnameLabel" layoutX="67.0" layoutY="226.0" text="Primer apelllido">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="firstSurnameTextField" layoutX="65.0" layoutY="246.0" />
+      <Label fx:id="maternalSurnameLabel" layoutX="67.0" layoutY="278.0" text="Segundo apellido">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="secondSurnameTextField" layoutX="65.0" layoutY="298.0" />
+      <Label fx:id="personalNumberLabel" layoutX="67.0" layoutY="122.0" text="Número de personal">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="personalNumberTextField" layoutX="65.0" layoutY="142.0" />
+      <Label fx:id="emailLabel" layoutX="371.0" layoutY="122.0" text="Correo">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="emailTextField" layoutX="369.0" layoutY="142.0" />
+      <Button fx:id="saveButton" layoutX="469.0" layoutY="341.0" mnemonicParsing="false" onAction="#registerAcademic" style="-fx-background-color: #4daa59;" text="Guardar" textFill="WHITE" />
+      <Button layoutX="366.0" layoutY="341.0" mnemonicParsing="false" onAction="#openAcademicsPage" style="-fx-background-color: #c9c9c9;" text="Cancelar" />
+      <Label fx:id="roleLabel" layoutX="371.0" layoutY="173.0" text="Puesto">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <ComboBox id="academicPositionBox" fx:id="academicPositionBox" layoutX="369.0" layoutY="193.0" prefHeight="26.0" prefWidth="159.0" />
+      <Label layoutX="432.0" layoutY="6.0" text="Universidad Veracruzana" textFill="WHITE" />
+      <Label layoutX="203.0" layoutY="46.0" text="Prácticas Profesionales" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
