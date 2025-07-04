@@ -1,16 +1,16 @@
-# Professional Practices Managment System
+# Professional Practices Management System
 
-The system allows the faculty memmbers to track students' professional practice progress, upload evaluations and review documents within a single application.
+The system allows the faculty members to track students' professional practice progress, upload evaluations and review documents within a single application.
 
-It helps the coordinator to reduce workload and responsabilities, while improving the document management and statistics tracking.
+It helps the coordinator to reduce workload and responsibilities, while improving the document management and statistics tracking.
 
 ---
 
 ## Features
 
-- Documents generation
-- Projects assignation
-- Global cronogram
+- Document generation
+- Projects assignment
+- Global timeline
 - Individual statistics and grades overall
 
 ---
@@ -19,13 +19,13 @@ It helps the coordinator to reduce workload and responsabilities, while improvin
 
 - GUI powered by JavaFX
 - Tested with JUnit 5 and TestFX
-- JSON managment with Gson
+- JSON management with Gson
 - MySQL connections with JDBC
-- Docx documents generation with POI-OOXML
+- DOCX document generation with POI-OOXML
 
 ---
 
-## Instalation
+## Installation
 
 Not ready for installation yet.
 
@@ -40,7 +40,7 @@ Gabriel Antonio González López
 
 ## License
 
-Licensed uner the MIT License
+Licensed under the MIT License
 
 MIT License
 
