@@ -31,6 +31,19 @@ Not ready for installation yet.
 
 ---
 
+## How to run (WIP)
+
+This project can be run from an IDE (IntelliJ) using the Main class in:
+
+```
+PCPracticasProfesionales/src/main/java/Main.java
+```
+
+## Requirements
+- Java 22+
+- JavaFX SDK configured
+- MySQL server running
+
 ## Autor
 
 Gabriel Antonio González López  
