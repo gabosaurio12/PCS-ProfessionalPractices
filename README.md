@@ -15,17 +15,6 @@ It helps the coordinator to reduce workload and responsabilities, while improvin
 
 ---
 
-## GUI Screenshots
-
-```markdown
-![Login](https://github.com/user-attachments/assets/465008e9-f696-4da0-972a-0d7fa5925ec9)
-![Coordinator Main Page](https://github.com/user-attachments/assets/3224797d-a6bb-4e86-bd61-cdc1aa3ba872)
-![Timeline](https://github.com/user-attachments/assets/e916dafc-4735-46c7-b219-659e3c522193)
-![Student Statistics](https://github.com/user-attachments/assets/a18179ef-34a0-449a-bb8f-36e6f46bf5f1)
-```
-
----
-
 ## Technologies
 
 - GUI powered by JavaFX
