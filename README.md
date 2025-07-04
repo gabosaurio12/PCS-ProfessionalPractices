@@ -17,6 +17,7 @@ It helps the coordinator to reduce workload and responsibilities, while improvin
 
 ## Technologies
 
+- Java
 - GUI powered by JavaFX
 - Tested with JUnit 5 and TestFX
 - JSON management with Gson
