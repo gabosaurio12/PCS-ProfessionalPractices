@@ -1,6 +1,6 @@
 # Professional Practices Management System
 
-The system allows the faculty members to track students' professional practice progress, upload evaluations and review documents within a single application.
+The system allows faculty members to track students' professional practice progress, upload evaluations and review documents within a single application.
 
 It helps the coordinator to reduce workload and responsibilities, while improving the document management and statistics tracking.
 
@@ -9,7 +9,7 @@ It helps the coordinator to reduce workload and responsibilities, while improvin
 ## Features
 
 - Document generation
-- Projects assignment
+- Project assignment
 - Global timeline
 - Individual statistics and grades overall
 
@@ -44,7 +44,7 @@ PCPracticasProfesionales/src/main/java/Main.java
 - JavaFX SDK configured
 - MySQL server running
 
-## Autor
+## Author
 
 Gabriel Antonio González López  
 [@gabosaurio12](https://github.com/gabosaurio12)
